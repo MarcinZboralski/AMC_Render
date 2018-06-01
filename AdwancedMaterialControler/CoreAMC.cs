@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace AdwancedMaterialControler
 {
-    public sealed class CoreAMC : MonoBehaviour
+    public class CoreAMC : MonoBehaviour
     {
         public static CoreAMC istance;
 

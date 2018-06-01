@@ -3,7 +3,7 @@
 namespace AdwancedMaterialControler
 {
     [System.Serializable]
-    public sealed class DataAMC
+    public class DataAMC
     {
         public string DataName;
         public Shader Shader;

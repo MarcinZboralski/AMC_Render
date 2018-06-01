@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 namespace AdwancedMaterialControler
 {
     [RequireComponent(typeof(Renderer))]
-    public sealed class RenderAMC : MonoBehaviour
+    public class RenderAMC : MonoBehaviour
     {
 	    private CoreAMC coreAmc;
 

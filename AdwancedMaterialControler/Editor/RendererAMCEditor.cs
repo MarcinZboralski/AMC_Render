@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 namespace AdwancedMaterialControler
 {
     [CustomEditor(typeof(RenderAMC))]
-    public sealed class RendererAMCEditor : Editor
+    public class RendererAMCEditor : Editor
     {
         public override void OnInspectorGUI()
         {
