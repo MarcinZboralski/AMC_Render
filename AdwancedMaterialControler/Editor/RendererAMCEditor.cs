@@ -16,12 +16,12 @@ namespace AdwancedMaterialControler
             DrawDefaultInspector();
 
 
-            r.silderNameBase = EditorGUILayout.IntSlider(r.silderNameBase,0,CoreAMC.istance.amcData.Count-1);
-            GUILayout.Label("Name In Data Base Is: " + CoreAMC.istance.amcData[r.silderNameBase].DataName);
+            r.SliderNameBase = EditorGUILayout.IntSlider(r.SliderNameBase,0,CoreAMC.istance.amcData.Count-1);
+            GUILayout.Label("Name In Data Base Is: " + CoreAMC.istance.amcData[r.SliderNameBase].DataName);
 
-            r.useCustomShader = GUILayout.Toggle(r.useCustomShader, "Use Custom Shader");
+            r.UseCustomShader = GUILayout.Toggle(r.UseCustomShader, "Use Custom Shader");
 
-            if (r.useCustomShader)
+            if (r.UseCustomShader)
             {
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Label("Custom Shader Field: ");
@@ -29,13 +29,13 @@ namespace AdwancedMaterialControler
                 EditorGUILayout.EndHorizontal();
             }
 
-           r.useCustomTexture = GUILayout.Toggle(r.useCustomTexture, "Use Custom Texture");
+           r.UseCustomTexture = GUILayout.Toggle(r.UseCustomTexture, "Use Custom Texture");
 
-            if (r.useCustomTexture)
+            if (r.UseCustomTexture)
             {
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Label("Custom Texture Field: ");
-                r.customTexture = (Texture)EditorGUILayout.ObjectField(r.customTexture, typeof(Texture), true);
+                r.CustomTexture = (Texture)EditorGUILayout.ObjectField(r.CustomTexture, typeof(Texture), true);
                 EditorGUILayout.EndHorizontal();
             }
 
@@ -48,21 +48,21 @@ namespace AdwancedMaterialControler
 
             if (GUILayout.Button("-"))
             {
-                if (r.value > 0)
+                if (r.Value > 0)
                 {
-                    r.value--;
+                    r.Value--;
                 }
-                r.UpdateRender(r.value);
+                r.UpdateRender(r.Value);
             }
 
             
             if (GUILayout.Button("+"))
             {
-                if (r.value < r.coreAmc.amcData[r.nameBaseCount].Textures.Length-1)
+                if (r.Value < r.CoreAmc.amcData[r.NameBaseCount].Textures.Length-1)
                 {
-                    r.value++;
+                    r.Value++;
                 }
-                r.UpdateRender(r.value);
+                r.UpdateRender(r.Value);
             }
 
             EditorGUILayout.EndHorizontal();

@@ -9,38 +9,87 @@ namespace AdwancedMaterialControler
     [RequireComponent(typeof(Renderer))]
     public sealed class RenderAMC : MonoBehaviour
     {
-        [NonSerialized]
-        public CoreAMC coreAmc;
+	    private CoreAMC coreAmc;
 
-        [NonSerialized]
-        public int nameBaseCount;
+	    private int nameBaseCount;
 
-        [NonSerialized]
         private new Renderer renderer;
 
+	    private string nameBase;
 
-        [NonSerialized]
-        public string nameBase;
+	    private int value;
 
-        [NonSerialized]
-        public int value;
+	    private bool useCustomShader;
 
-        [NonSerialized]
-        public bool useCustomShader;
+	    private bool useCustomTexture;
 
-        [NonSerialized]
-        public bool useCustomTexture;
+	    private Shader customShader;
 
-        [NonSerialized]
-        public Shader CustomShader;
+	    private Texture customTexture;
 
-        [NonSerialized]
-        public Texture customTexture;
+	    private int silderNameBase;
 
-        [NonSerialized]
-        public int silderNameBase;
 
-        void Awake()
+
+	    public CoreAMC CoreAmc
+	    {
+		    get { return coreAmc; }
+	    }
+
+	    public int NameBaseCount
+	    {
+		    get { return nameBaseCount; }
+	    }
+
+	    public Renderer Renderer
+	    {
+		    get { return renderer; }
+	    }
+
+	    public string NameBase
+	    {
+		    get { return nameBase; }
+	    }
+
+	    public int Value
+	    {
+		    get { return value; }
+		    set { this.value = value; }
+	    }
+
+	    public bool UseCustomShader
+	    {
+		    get { return useCustomShader; }
+		    set { useCustomShader = value; }
+		}
+
+	    public bool UseCustomTexture
+	    {
+		    get { return useCustomTexture; }
+		    set { useCustomTexture = value; }
+	    }
+
+		public Shader CustomShader
+	    {
+		    get { return customShader; }
+		    set { CustomShader = value; }
+		}
+
+	    public Texture CustomTexture
+	    {
+		    get { return customTexture; }
+		    set { CustomTexture = value; }
+		}
+
+	    public int SliderNameBase
+	    {
+		    get { return silderNameBase; }
+		    set { silderNameBase = value; }
+	    }
+
+
+
+	    void Awake()
         {
             UpdateComponets();
         }

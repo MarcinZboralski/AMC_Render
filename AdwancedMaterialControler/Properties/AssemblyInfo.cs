@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
 // powiązane z zestawem.
 [assembly: AssemblyTitle("AdwancedMaterialControler")]
-[assembly: AssemblyDescription("v0.2a")]
+[assembly: AssemblyDescription("v0.3a")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Adwanced Material Controler")]
