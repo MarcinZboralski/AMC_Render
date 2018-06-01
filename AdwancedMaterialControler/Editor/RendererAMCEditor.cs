@@ -16,12 +16,12 @@ namespace AdwancedMaterialControler
             DrawDefaultInspector();
 
 
-            r.SliderNameBase = EditorGUILayout.IntSlider(r.SliderNameBase,0,CoreAMC.istance.amcData.Count-1);
-            GUILayout.Label("Name In Data Base Is: " + CoreAMC.istance.amcData[r.SliderNameBase].DataName);
+            r.SilderNameBase = EditorGUILayout.IntSlider(r.SilderNameBase,0,CoreAMC.istance.amcData.Count-1);
+            GUILayout.Label("Name In Data Base Is: " + CoreAMC.istance.amcData[r.SilderNameBase].DataName);
 
-            r.UseCustomShader = GUILayout.Toggle(r.UseCustomShader, "Use Custom Shader");
+            r.useCustomShader = GUILayout.Toggle(r.useCustomShader, "Use Custom Shader");
 
-            if (r.UseCustomShader)
+            if (r.useCustomShader)
             {
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Label("Custom Shader Field: ");
@@ -29,9 +29,9 @@ namespace AdwancedMaterialControler
                 EditorGUILayout.EndHorizontal();
             }
 
-           r.UseCustomTexture = GUILayout.Toggle(r.UseCustomTexture, "Use Custom Texture");
+           r.useCustomTexture = GUILayout.Toggle(r.useCustomTexture, "Use Custom Texture");
 
-            if (r.UseCustomTexture)
+            if (r.useCustomTexture)
             {
                 EditorGUILayout.BeginHorizontal();
                 GUILayout.Label("Custom Texture Field: ");
@@ -48,21 +48,21 @@ namespace AdwancedMaterialControler
 
             if (GUILayout.Button("-"))
             {
-                if (r.Value > 0)
+                if (r.value > 0)
                 {
-                    r.Value--;
+                    r.value--;
                 }
-                r.UpdateRender(r.Value);
+                r.UpdateRender(r.value);
             }
 
             
             if (GUILayout.Button("+"))
             {
-                if (r.Value < r.CoreAmc.amcData[r.NameBaseCount].Textures.Length-1)
+                if (r.value < r.coreAmc.amcData[r.nameBaseCount].Textures.Length-1)
                 {
-                    r.Value++;
+                    r.value++;
                 }
-                r.UpdateRender(r.Value);
+                r.UpdateRender(r.value);
             }
 
             EditorGUILayout.EndHorizontal();

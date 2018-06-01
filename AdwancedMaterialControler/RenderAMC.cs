@@ -9,87 +9,38 @@ namespace AdwancedMaterialControler
     [RequireComponent(typeof(Renderer))]
     public class RenderAMC : MonoBehaviour
     {
-	    private CoreAMC coreAmc;
+        [NonSerialized]
+        public CoreAMC coreAmc;
 
-	    private int nameBaseCount;
+        [NonSerialized]
+        public int nameBaseCount;
 
+        [NonSerialized]
         private new Renderer renderer;
 
-	    private string nameBase;
 
-	    private int value;
+        [NonSerialized]
+        public string nameBase;
 
-	    private bool useCustomShader;
+        [NonSerialized]
+        public int value;
 
-	    private bool useCustomTexture;
+        [NonSerialized]
+        public bool useCustomShader;
 
-	    private Shader customShader;
+        [NonSerialized]
+        public bool useCustomTexture;
 
-	    private Texture customTexture;
+        [NonSerialized]
+        public Shader CustomShader;
 
-	    private int silderNameBase;
+        [NonSerialized]
+        public Texture CustomTexture;
 
+        [NonSerialized]
+        public int SilderNameBase;
 
-
-	    public CoreAMC CoreAmc
-	    {
-		    get { return coreAmc; }
-	    }
-
-	    public int NameBaseCount
-	    {
-		    get { return nameBaseCount; }
-	    }
-
-	    public Renderer Renderer
-	    {
-		    get { return renderer; }
-	    }
-
-	    public string NameBase
-	    {
-		    get { return nameBase; }
-	    }
-
-	    public int Value
-	    {
-		    get { return value; }
-		    set { this.value = value; }
-	    }
-
-	    public bool UseCustomShader
-	    {
-		    get { return useCustomShader; }
-		    set { useCustomShader = value; }
-		}
-
-	    public bool UseCustomTexture
-	    {
-		    get { return useCustomTexture; }
-		    set { useCustomTexture = value; }
-	    }
-
-		public Shader CustomShader
-	    {
-		    get { return customShader; }
-		    set { CustomShader = value; }
-		}
-
-	    public Texture CustomTexture
-	    {
-		    get { return customTexture; }
-		    set { CustomTexture = value; }
-		}
-
-	    public int SliderNameBase
-	    {
-		    get { return silderNameBase; }
-		    set { silderNameBase = value; }
-	    }
-
-
-
-	    void Awake()
+        void Awake()
         {
             UpdateComponets();
         }
@@ -110,7 +61,7 @@ namespace AdwancedMaterialControler
         public void UpdateRender(int value)
         {
             nameBaseCount = coreAmc.GetNameDataCount(nameBase);
-            nameBase = coreAmc.amcData[silderNameBase].DataName;
+            nameBase = coreAmc.amcData[SilderNameBase].DataName;
 
             if (useCustomTexture == false)
             {
@@ -118,14 +69,14 @@ namespace AdwancedMaterialControler
             }
             else
             {
-                if (customTexture == null)
+                if (CustomTexture == null)
                 {
                     renderer.material.mainTexture = coreAmc.GetTexture(nameBase, value);
                     useCustomTexture = false;
                 }
                 else
                 {
-                    renderer.material.mainTexture = customTexture;
+                    renderer.material.mainTexture = CustomTexture;
                 }
             }
 
